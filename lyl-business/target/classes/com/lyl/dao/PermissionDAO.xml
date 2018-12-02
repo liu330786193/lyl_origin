@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyl.dao.PermissionDAO" >
+  <resultMap id="BaseResultMap" type="com.lyl.pojo.Permission" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="permission" property="permission" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="findPermissionsByRolename" resultType="String">
+    SELECT
+        permission
+    FROM
+        s_permission
+    WHERE
+        id IN (
+            SELECT
+                permission_id
+            FROM
+                s_role_permission
+            WHERE
+                role_id = (
+                    SELECT
+                        id
+                    FROM
+                        s_role
+                    WHERE
+                        rolename = #{rolename}
+                )
+        )
+  </select>
+</mapper>

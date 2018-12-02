@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyl.dao.ZjjzCnapsBankinfoDAO" >
+  <resultMap id="BaseResultMap" type="com.lyl.pojo.ZjjzCnapsBankinfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="bankno" property="bankno" jdbcType="CHAR" />
+    <result column="status" property="status" jdbcType="CHAR" />
+    <result column="bankclscode" property="bankclscode" jdbcType="CHAR" />
+    <result column="citycode" property="citycode" jdbcType="CHAR" />
+    <result column="bankname" property="bankname" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, bankno, status, bankclscode, citycode, bankname
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from ZJJZ_CNAPS_BANKINFO
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ZJJZ_CNAPS_BANKINFO
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lyl.pojo.ZjjzCnapsBankinfo" >
+    insert into ZJJZ_CNAPS_BANKINFO (id, bankno, status,
+      bankclscode, citycode, bankname
+      )
+    values (#{id,jdbcType=BIGINT}, #{bankno,jdbcType=CHAR}, #{status,jdbcType=CHAR},
+      #{bankclscode,jdbcType=CHAR}, #{citycode,jdbcType=CHAR}, #{bankname,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lyl.pojo.ZjjzCnapsBankinfo" >
+    insert into ZJJZ_CNAPS_BANKINFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="bankno != null" >
+        bankno,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="bankclscode != null" >
+        bankclscode,
+      </if>
+      <if test="citycode != null" >
+        citycode,
+      </if>
+      <if test="bankname != null" >
+        bankname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="bankno != null" >
+        #{bankno,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=CHAR},
+      </if>
+      <if test="bankclscode != null" >
+        #{bankclscode,jdbcType=CHAR},
+      </if>
+      <if test="citycode != null" >
+        #{citycode,jdbcType=CHAR},
+      </if>
+      <if test="bankname != null" >
+        #{bankname,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lyl.pojo.ZjjzCnapsBankinfo" >
+    update ZJJZ_CNAPS_BANKINFO
+    <set >
+      <if test="bankno != null" >
+        bankno = #{bankno,jdbcType=CHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=CHAR},
+      </if>
+      <if test="bankclscode != null" >
+        bankclscode = #{bankclscode,jdbcType=CHAR},
+      </if>
+      <if test="citycode != null" >
+        citycode = #{citycode,jdbcType=CHAR},
+      </if>
+      <if test="bankname != null" >
+        bankname = #{bankname,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lyl.pojo.ZjjzCnapsBankinfo" >
+    update ZJJZ_CNAPS_BANKINFO
+    set bankno = #{bankno,jdbcType=CHAR},
+      status = #{status,jdbcType=CHAR},
+      bankclscode = #{bankclscode,jdbcType=CHAR},
+      citycode = #{citycode,jdbcType=CHAR},
+      bankname = #{bankname,jdbcType=CHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <!-- 使用MethodInvokingJobDetailFactoryBean，任务类可以不实现Job接口，通过targetMethod指定调用方法-->
+    <!-- 获取accesstoken -->
+
+    <!--<bean id="cardStatSummaryCronJobService" class="com.xkeshi.weixin.scheduler.CardStatSummaryCronJob"/>
+
+    &lt;!&ndash; 获取微信会员卡信息&ndash;&gt;
+    <bean id="cardStatSummaryCronJobFactory"
+          class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject">
+            <ref bean="cardStatSummaryCronJobService"/>
+        </property>
+        <property name="targetMethod">
+            &lt;!&ndash; 要执行的方法名称 &ndash;&gt;
+            <value>getCardStatSummaryData</value>
+        </property>
+        <property name="concurrent">
+            <value>false</value>
+        </property>
+    </bean>
+
+    &lt;!&ndash; ======================== 调度触发器 ======================== &ndash;&gt;
+    &lt;!&ndash; 获取第三方componet_access_token 1h 执行一次&ndash;&gt;
+    <bean id="cardStatSummaryCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="cardStatSummaryCronJobFactory"></property>
+        <property name="cronExpression" value="0 15 00 * * ?"></property>
+    </bean>
+
+    &lt;!&ndash; ======================== 调度工厂 ======================== &ndash;&gt;
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cardStatSummaryCronTrigger"/>
+            </list>
+        </property>
+    </bean>-->
+
+</beans>

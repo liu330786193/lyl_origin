@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyl.dao.CouponAppCouponDAO" >
+  <resultMap id="CouponAppCoupon" type="com.lyl.pojo.CouponAppCoupon" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="app_code" property="appCode" jdbcType="VARCHAR" />
+    <result column="app_name" property="appName" jdbcType="VARCHAR" />
+    <result column="coupon_info_channel_id" property="couponInfoChannelId" jdbcType="BIGINT" />
+    <result column="coupon_info_code" property="couponInfoCode" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="CHAR" />
+    <result column="business_id" property="businessId" jdbcType="BIGINT" />
+    <result column="business_name" property="businessName" jdbcType="VARCHAR" />
+    <result column="shop_category" property="shopCategory" jdbcType="VARCHAR" />
+    <result column="shop_longitude" property="shopLongitude" jdbcType="VARCHAR" />
+    <result column="shop_latitude" property="shopLatitude" jdbcType="VARCHAR" />
+    <result column="coupon_name" property="couponName" jdbcType="VARCHAR" />
+    <result column="relation_status" property="relationStatus" jdbcType="CHAR" />
+    <result column="is_recommend" property="isRecommend" jdbcType="CHAR" />
+    <result column="is_preference" property="isPreference" jdbcType="CHAR" />
+    <result column="app_count" property="appCount" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <result column="is_delete" property="isDelete" jdbcType="CHAR" />
+    <result column="remark" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, app_code, app_name, coupon_info_channel_id, coupon_info_code, type, business_id,
+    business_name, shop_category, shop_longitude, shop_latitude, coupon_name, relation_status,
+    is_recommend, is_preference, app_count, create_time, update_time, is_delete, remark
+  </sql>
+
+  <select id="queryAllInfo" resultType="com.lyl.pojo.CouponAppCoupon">
+    SELECT
+      *
+    FROM
+      coupon_app_coupon
+  </select>
+
+  <select id="getAllCount" resultType="Long">
+    SELECT
+      count(*)
+    FROM
+      coupon_app_coupon
+  </select>
+
+</mapper>

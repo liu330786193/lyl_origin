@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lyl.iml" filepath="$PROJECT_DIR$/lyl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyl-business/lyl-business.iml" filepath="$PROJECT_DIR$/lyl-business/lyl-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyl-core/lyl-core.iml" filepath="$PROJECT_DIR$/lyl-core/lyl-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyl-dubbo/lyl-dubbo.iml" filepath="$PROJECT_DIR$/lyl-dubbo/lyl-dubbo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lyl-web/lyl-web.iml" filepath="$PROJECT_DIR$/lyl-web/lyl-web.iml" />
+    </modules>
+  </component>
+</project>

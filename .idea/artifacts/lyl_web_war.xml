@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="lyl-web:war">
+    <output-path>$PROJECT_DIR$/lyl-web/target</output-path>
+    <root id="archive" name="lyl-web-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="lyl-web:war exploded" />
+    </root>
+  </artifact>
+</component>
